@@ -16,7 +16,7 @@ TestNG and
 Extent Reports
 
 Automation Test Execution Report:
-[Automation Test Execution Report](https://github.com/Sriram058/IMDbAssignment/tree/master/AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
+[Automation Test Execution Report](https://sriram058.github.io/)
 
 Automation Test Screen Captures:
 [Automation Test Screen Captures](https://github.com/Sriram058/IMDbAssignment/tree/master/ScreenCaptures/)
