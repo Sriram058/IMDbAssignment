@@ -16,9 +16,9 @@ TestNG and
 Extent Reports
 
 Automation Test Execution Report:
-[Automation Test Execution Report](/AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
+[Automation Test Execution Report](IMDbAssignment/AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
 
 Automation Test Screen Captures:
-[Automation Test Screen Captures](/ScreenCaptures/)
+[Automation Test Screen Captures](IMDbAssignment/ScreenCaptures/)
 
 
