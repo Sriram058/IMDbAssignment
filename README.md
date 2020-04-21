@@ -15,10 +15,10 @@ Maven,
 TestNG and 
 Extent Reports
 
-Sample Report:
-[AutomationExecutionReport_2020_04_21_11_09_32](..AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
+Automation Test Execution Report:
+[Automation Test Execution Report](../AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
 
-Sample ScreenCaptures:
-[ScreenCaptures](..ScreenCaptures/)
+Automation Test Screen Captures:
+[Automation Test Screen Captures](../ScreenCaptures/)
 
 
