@@ -1,18 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="IMDB Test Suite">
+<suite name="IMDb Test Suite">
     <listeners>
         <listener class-name="com.assignment.imdb.utilities.ReportGenerationListener"></listener>
     </listeners>
-    <test name="IMDB Search Test in Chrome">
+    <test name="IMDb Video Game Search">
         <parameter name="browserType" value="chrome"></parameter>
         <classes>
             <class name="com.assignment.imdb.tests.IMDBVideoGameSearchTest">
-                    <methods>
-                        <include name="validateOpeningIMDBHomePage"></include>
-                        <include name="validateSearchingUsingString"></include>
-                        <include name="validateSearchTerm"></include>
-                        <include name="validateFilteringSearchResultsByVideoGame"></include>
-                    </methods>
             </class>
         </classes>
     </test>

@@ -1,6 +1,6 @@
-IMDb Search Test Assignment
+# IMDb Search Test Assignment
 
-To run the Test
+### To run the Test
 1. Clone the Repository to IntelliJ IDEA IDE.
 2. Add Maven Framework Support to the Project.
 3. Please make sure all the dependent library files are loaded through Maven pom.xml file.
@@ -14,5 +14,11 @@ Selenide Framework,
 Maven, 
 TestNG and 
 Extent Reports
+
+Sample Report:
+[AutomationExecutionReport_2020_04_21_11_09_32](..Sriram058/IMDbAssignment/AutomationExecutionReports/AutomationExecutionReport_2020_04_21_11_09_32.html)
+
+Sample ScreenCaptures:
+[ScreenCaptures](..Sriram058/IMDbAssignment/ScreenCaptures/)
 
 

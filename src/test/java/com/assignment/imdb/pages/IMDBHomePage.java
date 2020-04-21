@@ -1,7 +1,11 @@
 package com.assignment.imdb.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.SelenideWait;
 import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.*;
@@ -12,14 +16,15 @@ public class IMDBHomePage {
 
     private final SelenideElement searchBar = $(byName("q"));
 
-    public boolean openHomePage(){
+    public boolean openHomePage() {
         open(PAGE_URL);
         return WebDriverRunner.getWebDriver().getTitle().equals(PAGE_TITLE);
     }
 
     public boolean searchFor(String searchString) {
         searchBar.val(searchString).pressEnter();
-        sleep(1000L);
+        SelenideWait selenideWait = new SelenideWait(WebDriverRunner.getWebDriver(), 3000L, 1000L);
+        selenideWait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(PAGE_URL)));
         return WebDriverRunner.getWebDriver().getCurrentUrl().equals(PAGE_URL);
     }
 }

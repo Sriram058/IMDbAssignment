@@ -23,27 +23,28 @@ public class ReportGenerationListener extends TestListenerAdapter {
 
     @Override
     public void onTestStart(ITestResult result) {
-        stringBuilder = new StringBuilder();
-        stringBuilder.append(result.getTestContext().getName())
-                .append(" - ")
-                .append(result.getMethod().getMethodName());
-        extentTest = extentReports.createTest(stringBuilder.toString()).createNode(stringBuilder.toString());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        extentTest.pass(String.format("Test has passed. For Records, Screenshot for the Passed Test Case is kept at: %s", takeScreenCapture()));
+        extentTest
+                .createNode(result.getMethod().getDescription())
+                .pass(String.format("Test has passed. For Records, Screenshot for the Passed Test Case is kept at: %s", takeScreenCapture()));
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        extentTest.fail(String.format("Test has failed. For Reference, Screenshot for the Failed Test Case is kept at: %s", takeScreenCapture()));
-        extentTest.fail(result.getThrowable());
+        extentTest
+                .createNode(result.getMethod().getDescription())
+                .fail(String.format("Test has failed. For Reference, Screenshot for the Failed Test Case is kept at: %s", takeScreenCapture()))
+                .fail(result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        extentTest.skip("Test has skipped.");
+        extentTest
+                .createNode(result.getMethod().getDescription())
+                .skip("Test has skipped. Possible reason would be Dependent Tests might have failed.");
     }
 
     @Override
@@ -61,14 +62,15 @@ public class ReportGenerationListener extends TestListenerAdapter {
                 .append(localDateTime.format(dateTimeFormatter))
                 .append(".html");
         extentSparkReporter = new ExtentSparkReporter(stringBuilder.toString());
-        extentSparkReporter.config().setDocumentTitle("IMDB Test Suite Automation Execution Report");
-        extentSparkReporter.config().setReportName("IMDB Test Automation Execution Report");
+        extentSparkReporter.config().setDocumentTitle("IMDb Test Suite Automation Execution Report");
+        extentSparkReporter.config().setReportName("IMDb Test Automation Execution Report");
         extentSparkReporter.config().setTheme(Theme.DARK);
         extentReports = new ExtentReports();
         extentReports.attachReporter(extentSparkReporter);
-        extentReports.setSystemInfo("Application Name", "IMDB Test Suite");
+        extentReports.setSystemInfo("Application Name", "IMDb Test Suite");
         extentReports.setSystemInfo("Platform", System.getProperty("os.name"));
         extentReports.setSystemInfo("Environment", "Production");
+        extentTest = extentReports.createTest(context.getName());
     }
 
     @Override
